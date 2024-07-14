@@ -20,5 +20,7 @@ document.getElementById('numbers').innerHTML = random_numbers;
 setTimeout(function () {
     document.getElementById('numbers').style.display = 'none';
     let user_numbers = [];
-    let num = prompt('inserisci il tuo numero');
+    for (let i = 0; i < 5; i++) {
+        user_numbers.push(prompt('inserisci il tuo numero'));
+    }
 }, 5000);
