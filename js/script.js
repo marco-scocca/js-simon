@@ -18,9 +18,21 @@ let random_numbers = createArrayNumbers();
 document.getElementById('numbers').innerHTML = random_numbers;
 
 setTimeout(function () {
-    document.getElementById('numbers').style.display = 'none';
+    document.getElementById('numbers').innerHTML = '';
+
+}, 5000);
+
+setTimeout(function () {
     let user_numbers = [];
     for (let i = 0; i < 5; i++) {
-        user_numbers.push(prompt('inserisci il tuo numero'));
+        user_numbers.push(parseInt(prompt('inserisci il tuo numero')));
     }
-}, 5000);
+    let guessed = [];
+    for (let i = 0; i < 5; i++) {
+        if (random_numbers.includes(user_numbers[i])) {
+            guessed.push(user_numbers[i]);
+        }
+    }
+    document.getElementById('numbers').innerHTML = `Hai indovinato ${guessed.length} numeri. Sono i seguenti ${guessed}`;
+
+}, 6000);
