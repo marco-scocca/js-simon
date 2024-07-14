@@ -17,3 +17,7 @@ let random_numbers = createArrayNumbers();
 
 document.getElementById('numbers').innerHTML = random_numbers;
 
+setTimeout(function () {
+    document.getElementById('numbers').innerHTML = '';
+    let num = prompt('inserisci il tuo numero');
+}, 5000);
